@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+    
+
+    
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6" style="padding-left: 17%; padding-top: 2%; padding-right: 5%;">
+            <h3 align="center">Update Student</h3>
+            <form action="/update/<%= data._id %>" method="post">
+                <div class="form-group" style="padding-top: 12%;">
+                  <label for="exampleInputEmail1"><b>Name</b></label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" value="<%= data.name %>" name="name">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+                </div>
+                <div class="form-group" style="padding-top: 5%;">
+                  <label for="exampleInputPassword1"><b>Age</b></label>
+                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Age" value="<%= data.age %>" name="age">
+                </div>
+                <div class="form-group" style="padding-top: 5%; padding-bottom: 5%;">
+                    <label for="exampleInputPassword1"><b>Fees</b></label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Fees" value="<%= data.fees %>" name="fees">
+                </div>
+                <button type="submit" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-secondary" id="goBackButton">Go back</button>               
+            </form>
+        </div>
+    </div>
+</div>   
+
+
+<script>
+    // Get a reference to the "Go back" button
+    const goBackButton = document.getElementById("goBackButton");
+  
+    // Add a click event listener to the button
+    goBackButton.addEventListener("click", function () {
+      // Define the URL of your home page
+      const homePageUrl = "/"; // Replace with the actual URL of your home page
+  
+      // Redirect to the home page
+      window.location.href = homePageUrl;
+    });
+  </script>
+ 
+
+    
+<%- include('./partials/footer.ejs') %>
